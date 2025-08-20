@@ -1,0 +1,13 @@
+{
+  "name": "designnav",
+  "version": "1.0.0",
+  "description": "设计师导航网站",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Static site - no build required'",
+    "start": "echo 'Static site - serve index.html'"
+  },
+  "keywords": ["design", "navigation", "static-site"],
+  "author": "DesignNav",
+  "license": "MIT"
+}
