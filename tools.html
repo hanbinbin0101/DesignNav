@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <script defer data-domain="designnav.art" src="https://plausible.io/js/script.file-downloads.outbound-links.pageview-props.revenue.tagged-events.js"></script>
+    <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7420523608637446"
+     crossorigin="anonymous"></script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G7ETHDVRRK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G7ETHDVRRK');
+    </script>
+    
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "sy76cv1kes");
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设计工具集 - DesignNav</title>
+    <meta name="description" content="专业的设计工具集合，包括智能配色生成器、字体配对推荐、尺寸计算器等实用工具，助力设计师提升工作效率">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            scroll-behavior: smooth;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .tool-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: #3B82F6;
+        }
+        .color-swatch {
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .color-swatch:hover {
+            transform: scale(1.05);
+        }
+        .color-scheme {
+            animation: fadeInUp 0.5s ease;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .font-preview {
+            transition: all 0.3s ease;
+        }
+        .font-preview:hover {
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="bg-white shadow-sm fixed w-full z-10">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <a href="index.html" class="text-xl font-bold text-blue-600">DesignNav</a>
+                <span class="text-sm text-gray-500">设计工具集</span>
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600">首页</a>
+                <span class="text-blue-600 font-medium">设计工具</span>
+                <a href="#color-tools" class="text-gray-700 hover:text-blue-600">配色工具</a>
+                <a href="#font-tools" class="text-gray-700 hover:text-blue-600">字体工具</a>
+                <a href="#size-tools" class="text-gray-700 hover:text-blue-600">尺寸工具</a>
+                <a href="#convert-tools" class="text-gray-700 hover:text-blue-600">转换工具</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="submit.html" class="bg-blue-600 text-white px-4 py-1.5 rounded-md text-sm hover:bg-blue-700 transition-colors flex items-center">
+                    <i class="fas fa-plus mr-1"></i>提交资源
+                </a>
+                <button class="text-gray-700 md:hidden" id="mobile-menu-button"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容区 -->
+    <main class="container mx-auto px-4 pt-20 pb-12">
+        <!-- 页面标题 -->
+        <div class="text-center py-12">
+            <h1 class="text-4xl font-bold mb-4">专业设计工具集</h1>
+            <p class="text-gray-600 max-w-2xl mx-auto">提供配色生成、字体配对、尺寸计算等实用工具，让设计工作更高效、更专业</p>
+        </div>
+
+        <!-- 配色工具区域 -->
+        <section class="mb-16" id="color-tools">
+            <div class="flex items-center mb-8">
+                <div class="w-1 h-8 bg-gradient-to-b from-pink-500 to-purple-600 rounded mr-4"></div>
+                <h2 class="text-3xl font-bold text-gray-800">智能配色工具</h2>
+            </div>
+
+            <!-- 配色生成器 -->
+            <div class="tool-card bg-white rounded-2xl shadow-lg p-8 mb-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- 左侧控制面板 -->
+                    <div>
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-400 to-purple-500 flex items-center justify-center mr-4">
+                                <i class="fas fa-palette text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-800">智能配色生成器</h3>
+                                <p class="text-gray-600 text-sm">基于色彩理论生成和谐的配色方案</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6">
+                            <!-- 主色调选择 -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-3">选择主色调</label>
+                                <div class="flex items-center space-x-4">
+                                    <input type="color" id="primary-color" value="#3B82F6" class="w-16 h-16 rounded-lg border-2 border-gray-300 cursor-pointer">
+                                    <div>
+                                        <input type="text" id="color-hex" value="#3B82F6" class="w-24 px-3 py-2 border border-gray-300 rounded-md text-center font-mono text-sm">
+                                        <p class="text-xs text-gray-500 mt-1">HEX值</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 配色方案选择 -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-3">配色方案</label>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <button class="scheme-btn active px-4 py-3 border-2 border-blue-500 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium transition-all" data-scheme="analogous">
+                                        类比色
+                                    </button>
+                                    <button class="scheme-btn px-4 py-3 border-2 border-gray-200 bg-gray-50 text-gray-700 rounded-lg text-sm font-medium transition-all hover:border-blue-500 hover:bg-blue-50 hover:text-blue-700" data-scheme="complementary">
+                                        对比色
+                                    </button>
+                                    <button class="scheme-btn px-4 py-3 border-2 border-gray-200 bg-gray-50 text-gray-700 rounded-lg text-sm font-medium transition-all hover:border-blue-500 hover:bg-blue-50 hover:text-blue-700" data-scheme="triadic">
+                                        三角色
+                                    </button>
+                                    <button class="scheme-btn px-4 py-3 border-2 border-gray-200 bg-gray-50 text-gray-700 rounded-lg text-sm font-medium transition-all hover:border-blue-500 hover:bg-blue-50 hover:text-blue-700" data-scheme="monochromatic">
+                                        单色系
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- 生成按钮 -->
+                            <div class="space-y-3">
+                                <button id="generate-colors" class="w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white py-3 px-6 rounded-lg hover:from-pink-600 hover:to-purple-700 transition-all duration-300 font-medium">
+                                    <i class="fas fa-sync-alt mr-2"></i>生成新配色
+                                </button>
+                                <button id="export-colors" class="w-full bg-gray-100 text-gray-700 py-3 px-6 rounded-lg hover:bg-gray-200 transition-all duration-300 font-medium">
+                                    <i class="fas fa-download mr-2"></i>导出配色方案
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 右侧配色展示 -->
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-4">生成的配色方案</h4>
+                        <div id="color-palette" class="space-y-4">
+                            <!-- 配色方案将在这里生成 -->
+                        </div>
+
+                        <!-- 配色说明 -->
+                        <div id="color-description" class="mt-6 p-4 bg-gray-50 rounded-lg">
+                            <h5 class="font-medium text-gray-800 mb-2">配色说明</h5>
+                            <p class="text-gray-600 text-sm">类比色方案基于色轮上相邻的颜色，创造和谐自然的视觉效果，适合需要温和过渡的设计场景。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 字体工具区域 -->
+        <section class="mb-16" id="font-tools">
+            <div class="flex items-center mb-8">
+                <div class="w-1 h-8 bg-gradient-to-b from-green-500 to-blue-600 rounded mr-4"></div>
+                <h2 class="text-3xl font-bold text-gray-800">字体配对工具</h2>
+            </div>
+
+            <!-- 字体配对推荐 -->
+            <div class="tool-card bg-white rounded-2xl shadow-lg p-8 mb-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- 左侧控制面板 -->
+                    <div>
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center mr-4">
+                                <i class="fas fa-font text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-800">字体配对推荐</h3>
+                                <p class="text-gray-600 text-sm">为你的设计推荐完美的字体组合</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6">
+                            <!-- 字体类别选择 -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-3">选择主要字体类型</label>
+                                <div class="space-y-2">
+                                    <button class="font-type-btn active w-full px-4 py-3 border-2 border-green-500 bg-green-50 text-green-700 rounded-lg text-left transition-all" data-type="sans-serif">
+                                        <div class="font-semibold">无衬线字体 (Sans-serif)</div>
+                                        <div class="text-xs opacity-75">现代、简洁、易读</div>
+                                    </button>
+                                    <button class="font-type-btn w-full px-4 py-3 border-2 border-gray-200 bg-gray-50 text-gray-700 rounded-lg text-left transition-all hover:border-green-500 hover:bg-green-50 hover:text-green-700" data-type="serif">
+                                        <div class="font-semibold">衬线字体 (Serif)</div>
+                                        <div class="text-xs opacity-75">传统、优雅、正式</div>
+                                    </button>
+                                    <button class="font-type-btn w-full px-4 py-3 border-2 border-gray-200 bg-gray-50 text-gray-700 rounded-lg text-left transition-all hover:border-green-500 hover:bg-green-50 hover:text-green-700" data-type="display">
+                                        <div class="font-semibold">装饰字体 (Display)</div>
+                                        <div class="text-xs opacity-75">个性、醒目、创意</div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- 使用场景选择 -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-3">使用场景</label>
+                                <select id="font-scenario" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                                    <option value="website">网站界面</option>
+                                    <option value="app">移动应用</option>
+                                    <option value="brand">品牌设计</option>
+                                    <option value="print">印刷品</option>
+                                    <option value="presentation">演示文稿</option>
+                                </select>
+                            </div>
+
+                            <!-- 生成按钮 -->
+                            <div class="space-y-3">
+                                <button id="generate-fonts" class="w-full bg-gradient-to-r from-green-500 to-blue-600 text-white py-3 px-6 rounded-lg hover:from-green-600 hover:to-blue-700 transition-all duration-300 font-medium">
+                                    <i class="fas fa-magic mr-2"></i>生成字体配对
+                                </button>
+                                <button id="save-fonts" class="w-full bg-gray-100 text-gray-700 py-3 px-6 rounded-lg hover:bg-gray-200 transition-all duration-300 font-medium">
+                                    <i class="fas fa-heart mr-2"></i>收藏配对方案
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 右侧字体展示 -->
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-4">推荐的字体配对</h4>
+                        <div id="font-combinations" class="space-y-4">
+                            <!-- 字体组合将在这里生成 -->
+                        </div>
+
+                        <!-- 字体使用指南 -->
+                        <div id="font-guide" class="mt-6 p-4 bg-gray-50 rounded-lg">
+                            <h5 class="font-medium text-gray-800 mb-2">使用建议</h5>
+                            <p class="text-gray-600 text-sm">无衬线字体适合作为正文，具有良好的可读性；衬线字体可用于标题，增强视觉层次感。保持字体数量在2-3种以内，确保整体设计的一致性。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 尺寸工具区域 -->
+        <section class="mb-16" id="size-tools">
+            <div class="flex items-center mb-8">
+                <div class="w-1 h-8 bg-gradient-to-b from-orange-500 to-red-600 rounded mr-4"></div>
+                <h2 class="text-3xl font-bold text-gray-800">尺寸计算工具</h2>
+            </div>
+
+            <!-- 设计尺寸计算器 -->
+            <div class="tool-card bg-white rounded-2xl shadow-lg p-8 mb-8">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center mr-4">
+                        <i class="fas fa-ruler-combined text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800">响应式尺寸计算器</h3>
+                        <p class="text-gray-600 text-sm">计算不同设备上的最适尺寸</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- 输入区域 -->
+                    <div class="lg:col-span-1">
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">基础尺寸（桌面端）</label>
+                                <div class="flex space-x-2">
+                                    <input type="number" id="base-width" placeholder="宽度" class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                    <span class="px-3 py-2 text-gray-500">×</span>
+                                    <input type="number" id="base-height" placeholder="高度" class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">目标设备</label>
+                                <select id="device-type" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                    <option value="mobile">移动端</option>
+                                    <option value="tablet">平板端</option>
+                                    <option value="desktop">桌面端</option>
+                                </select>
+                            </div>
+
+                            <button id="calculate-size" class="w-full bg-gradient-to-r from-orange-500 to-red-600 text-white py-3 px-6 rounded-lg hover:from-orange-600 hover:to-red-700 transition-all duration-300 font-medium">
+                                <i class="fas fa-calculator mr-2"></i>计算尺寸
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 结果展示区域 -->
+                    <div class="lg:col-span-2">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-4">计算结果</h4>
+                        <div id="size-results" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- 计算结果将在这里显示 -->
+                        </div>
+
+                        <!-- 标准尺寸参考 -->
+                        <div class="mt-6">
+                            <h5 class="font-medium text-gray-800 mb-3">标准设备尺寸参考</h5>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div class="p-4 bg-gray-50 rounded-lg">
+                                    <h6 class="font-medium text-gray-800 text-sm mb-2">移动端</h6>
+                                    <div class="space-y-1 text-xs text-gray-600">
+                                        <div class="flex justify-between"><span>iPhone 14</span><span>390×844</span></div>
+                                        <div class="flex justify-between"><span>iPhone 14 Plus</span><span>428×926</span></div>
+                                        <div class="flex justify-between"><span>Android</span><span>360×800</span></div>
+                                    </div>
+                                </div>
+                                <div class="p-4 bg-gray-50 rounded-lg">
+                                    <h6 class="font-medium text-gray-800 text-sm mb-2">平板端</h6>
+                                    <div class="space-y-1 text-xs text-gray-600">
+                                        <div class="flex justify-between"><span>iPad</span><span>768×1024</span></div>
+                                        <div class="flex justify-between"><span>iPad Pro</span><span>1024×1366</span></div>
+                                        <div class="flex justify-between"><span>Android平板</span><span>800×1280</span></div>
+                                    </div>
+                                </div>
+                                <div class="p-4 bg-gray-50 rounded-lg">
+                                    <h6 class="font-medium text-gray-800 text-sm mb-2">桌面端</h6>
+                                    <div class="space-y-1 text-xs text-gray-600">
+                                        <div class="flex justify-between"><span>Full HD</span><span>1920×1080</span></div>
+                                        <div class="flex justify-between"><span>2K</span><span>2560×1440</span></div>
+                                        <div class="flex justify-between"><span>4K</span><span>3840×2160</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 转换工具区域 -->
+        <section class="mb-16" id="convert-tools">
+            <div class="flex items-center mb-8">
+                <div class="w-1 h-8 bg-gradient-to-b from-purple-500 to-indigo-600 rounded mr-4"></div>
+                <h2 class="text-3xl font-bold text-gray-800">格式转换工具</h2>
+            </div>
+
+            <!-- 颜色格式转换器 -->
+            <div class="tool-card bg-white rounded-2xl shadow-lg p-8">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-400 to-indigo-500 flex items-center justify-center mr-4">
+                        <i class="fas fa-exchange-alt text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800">颜色格式转换器</h3>
+                        <p class="text-gray-600 text-sm">在HEX、RGB、HSL等格式间快速转换</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- 输入区域 -->
+                    <div>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">输入颜色值</label>
+                                <div class="flex items-center space-x-3">
+                                    <input type="color" id="convert-color-picker" value="#3B82F6" class="w-16 h-12 rounded-lg border-2 border-gray-300 cursor-pointer">
+                                    <input type="text" id="convert-color-input" value="#3B82F6" placeholder="输入颜色值" class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 font-mono">
+                                </div>
+                            </div>
+
+                            <button id="convert-color" class="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white py-3 px-6 rounded-lg hover:from-purple-600 hover:to-indigo-700 transition-all duration-300 font-medium">
+                                <i class="fas fa-sync mr-2"></i>转换格式
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 输出区域 -->
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-4">转换结果</h4>
+                        <div id="color-formats" class="space-y-3">
+                            <!-- 格式转换结果将在这里显示 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-6">
+                <a href="index.html" class="text-2xl font-bold text-blue-400 hover:text-blue-300">DesignNav</a>
+                <p class="text-gray-400 mt-2">专业的设计工具集合</p>
+            </div>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="index.html" class="text-gray-400 hover:text-white">返回首页</a>
+                <a href="#" class="text-gray-400 hover:text-white">使用帮助</a>
+                <a href="#" class="text-gray-400 hover:text-white">意见反馈</a>
+            </div>
+            <div class="text-gray-400 text-sm">
+                <p>© 2023 DesignNav. 保留所有权利</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <a href="#" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // 配色生成器功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const primaryColorInput = document.getElementById('primary-color');
+            const colorHexInput = document.getElementById('color-hex');
+            const colorPalette = document.getElementById('color-palette');
+            const generateButton = document.getElementById('generate-colors');
+            const exportButton = document.getElementById('export-colors');
+            const schemeButtons = document.querySelectorAll('.scheme-btn');
+            const colorDescription = document.getElementById('color-description');
+            
+            let currentScheme = 'analogous';
+
+            // 配色方案说明
+            const schemeDescriptions = {
+                analogous: '类比色方案基于色轮上相邻的颜色，创造和谐自然的视觉效果，适合需要温和过渡的设计场景。',
+                complementary: '对比色方案使用色轮上相对的颜色，创造强烈的视觉对比，适合需要突出重点的设计。',
+                triadic: '三角色方案使用色轮上等距离的三种颜色，创造平衡且充满活力的配色，适合动态设计。',
+                monochromatic: '单色系方案使用同一色相的不同明度和饱和度，创造统一和谐的视觉效果，适合简约设计。'
+            };
+
+            // 颜色转换函数
+            function hexToHsl(hex) {
+                const r = parseInt(hex.slice(1, 3), 16) / 255;
+                const g = parseInt(hex.slice(3, 5), 16) / 255;
+                const b = parseInt(hex.slice(5, 7), 16) / 255;
+                
+                const max = Math.max(r, g, b);
+                const min = Math.min(r, g, b);
+                let h, s, l = (max + min) / 2;
+                
+                if (max === min) {
+                    h = s = 0;
+                } else {
+                    const d = max - min;
+                    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+                    switch (max) {
+                        case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+                        case g: h = (b - r) / d + 2; break;
+                        case b: h = (r - g) / d + 4; break;
+                    }
+                    h /= 6;
+                }
+                
+                return [Math.round(h * 360), Math.round(s * 100), Math.round(l * 100)];
+            }
+            
+            function hslToHex(h, s, l) {
+                h /= 360; s /= 100; l /= 100;
+                const hue2rgb = (p, q, t) => {
+                    if (t < 0) t += 1;
+                    if (t > 1) t -= 1;
+                    if (t < 1/6) return p + (q - p) * 6 * t;
+                    if (t < 1/2) return q;
+                    if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+                    return p;
+                };
+                
+                const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+                const p = 2 * l - q;
+                const r = hue2rgb(p, q, h + 1/3);
+                const g = hue2rgb(p, q, h);
+                const b = hue2rgb(p, q, h - 1/3);
+                
+                return '#' + [r, g, b].map(x => {
+                    const hex = Math.round(x * 255).toString(16);
+                    return hex.length === 1 ? '0' + hex : hex;
+                }).join('');
+            }
+
+            function hexToRgb(hex) {
+                const r = parseInt(hex.slice(1, 3), 16);
+                const g = parseInt(hex.slice(3, 5), 16);
+                const b = parseInt(hex.slice(5, 7), 16);
+                return `rgb(${r}, ${g}, ${b})`;
+            }
+
+            // 生成配色方案
+            function generateColorScheme(baseColor, scheme) {
+                const [h, s, l] = hexToHsl(baseColor);
+                let colors = [];
+                
+                switch (scheme) {
+                    case 'analogous':
+                        colors = [
+                            baseColor,
+                            hslToHex((h + 30) % 360, s, l),
+                            hslToHex((h - 30 + 360) % 360, s, l),
+                            hslToHex(h, Math.max(s - 20, 20), Math.min(l + 20, 80)),
+                            hslToHex(h, Math.min(s + 20, 100), Math.max(l - 20, 20))
+                        ];
+                        break;
+                    case 'complementary':
+                        colors = [
+                            baseColor,
+                            hslToHex((h + 180) % 360, s, l),
+                            hslToHex(h, Math.max(s - 30, 10), Math.min(l + 30, 90)),
+                            hslToHex((h + 180) % 360, Math.max(s - 30, 10), Math.min(l + 30, 90)),
+                            hslToHex(h, Math.min(s + 20, 100), Math.max(l - 30, 10))
+                        ];
+                        break;
+                    case 'triadic':
+                        colors = [
+                            baseColor,
+                            hslToHex((h + 120) % 360, s, l),
+                            hslToHex((h + 240) % 360, s, l),
+                            hslToHex(h, Math.max(s - 20, 20), Math.min(l + 20, 80)),
+                            hslToHex((h + 120) % 360, Math.max(s - 20, 20), Math.min(l + 20, 80))
+                        ];
+                        break;
+                    case 'monochromatic':
+                        colors = [
+                            baseColor,
+                            hslToHex(h, s, Math.min(l + 30, 90)),
+                            hslToHex(h, s, Math.max(l - 30, 10)),
+                            hslToHex(h, Math.max(s - 20, 20), l),
+                            hslToHex(h, Math.min(s + 20, 100), l)
+                        ];
+                        break;
+                }
+                
+                return colors;
+            }
+            
+            // 更新配色展示
+            function updateColorPalette() {
+                const baseColor = primaryColorInput.value;
+                const colors = generateColorScheme(baseColor, currentScheme);
+                
+                colorPalette.innerHTML = colors.map((color, index) => {
+                    const [h, s, l] = hexToHsl(color);
+                    const rgb = hexToRgb(color);
+                    
+                    return `
+                        <div class="color-scheme flex items-center p-4 border border-gray-200 rounded-lg hover:shadow-md transition-all">
+                            <div class="color-swatch w-16 h-16 rounded-lg mr-4 flex-shrink-0 border-2 border-gray-200" 
+                                 style="background-color: ${color}" 
+                                 onclick="copyToClipboard('${color}')"></div>
+                            <div class="flex-1 min-w-0">
+                                <div class="font-mono text-sm font-medium text-gray-800">${color.toUpperCase()}</div>
+                                <div class="font-mono text-xs text-gray-600">${rgb}</div>
+                                <div class="font-mono text-xs text-gray-500">HSL(${h}, ${s}%, ${l}%)</div>
+                                <div class="text-xs text-gray-400 mt-1">${index === 0 ? '主色' : '配色 ' + index}</div>
+                            </div>
+                            <button onclick="copyToClipboard('${color}')" class="p-2 text-gray-400 hover:text-gray-600 transition-colors">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    `;
+                }).join('');
+                
+                // 更新说明
+                colorDescription.querySelector('p').textContent = schemeDescriptions[currentScheme];
+            }
+
+            // 复制到剪贴板
+            window.copyToClipboard = function(text) {
+                navigator.clipboard.writeText(text).then(() => {
+                    // 简单的提示反馈
+                    const tooltip = document.createElement('div');
+                    tooltip.textContent = '已复制！';
+                    tooltip.className = 'fixed top-20 right-4 bg-green-500 text-white px-3 py-1 rounded-md text-sm z-50';
+                    document.body.appendChild(tooltip);
+                    setTimeout(() => document.body.removeChild(tooltip), 2000);
+                });
+            };
+
+            // 事件监听
+            primaryColorInput.addEventListener('input', function() {
+                colorHexInput.value = this.value;
+                updateColorPalette();
+            });
+
+            colorHexInput.addEventListener('input', function() {
+                if (/^#[0-9A-F]{6}$/i.test(this.value)) {
+                    primaryColorInput.value = this.value;
+                    updateColorPalette();
+                }
+            });
+
+            schemeButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    schemeButtons.forEach(b => {
+                        b.classList.remove('active', 'border-blue-500', 'bg-blue-50', 'text-blue-700');
+                        b.classList.add('border-gray-200', 'bg-gray-50', 'text-gray-700');
+                    });
+                    this.classList.add('active', 'border-blue-500', 'bg-blue-50', 'text-blue-700');
+                    this.classList.remove('border-gray-200', 'bg-gray-50', 'text-gray-700');
+                    currentScheme = this.dataset.scheme;
+                    updateColorPalette();
+                });
+            });
+
+            generateButton.addEventListener('click', function() {
+                // 生成随机颜色
+                const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+                primaryColorInput.value = randomColor;
+                colorHexInput.value = randomColor;
+                updateColorPalette();
+            });
+
+            exportButton.addEventListener('click', function() {
+                const baseColor = primaryColorInput.value;
+                const colors = generateColorScheme(baseColor, currentScheme);
+                const colorData = colors.map((color, index) => {
+                    const [h, s, l] = hexToHsl(color);
+                    const rgb = hexToRgb(color);
+                    return {
+                        name: index === 0 ? '主色' : `配色${index}`,
+                        hex: color,
+                        rgb: rgb,
+                        hsl: `HSL(${h}, ${s}%, ${l}%)`
+                    };
+                });
+                
+                // 创建下载链接
+                const dataStr = JSON.stringify(colorData, null, 2);
+                const dataBlob = new Blob([dataStr], {type: 'application/json'});
+                const url = URL.createObjectURL(dataBlob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = `配色方案_${currentScheme}_${new Date().getTime()}.json`;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+            });
+
+            // 初始化
+            updateColorPalette();
+        });
+
+        // 字体配对推荐功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const fontTypeButtons = document.querySelectorAll('.font-type-btn');
+            const fontScenario = document.getElementById('font-scenario');
+            const fontCombinations = document.getElementById('font-combinations');
+            const generateFontsButton = document.getElementById('generate-fonts');
+            const saveFontsButton = document.getElementById('save-fonts');
+            const fontGuide = document.getElementById('font-guide');
+            
+            let currentFontType = 'sans-serif';
+            
+            // 字体数据库
+            const fontDatabase = {
+                'sans-serif': {
+                    website: [
+                        { primary: 'Inter', secondary: 'Source Sans Pro', description: '现代网站的完美组合，Inter用于标题，Source Sans Pro用于正文', preview: '现代、简洁' },
+                        { primary: 'Roboto', secondary: 'Open Sans', description: 'Google推荐的字体组合，适合各种网站界面', preview: '通用、易读' },
+                        { primary: 'Montserrat', secondary: 'Lato', description: '几何感强的标题字体配上友好的正文字体', preview: '几何、友好' },
+                        { primary: 'Poppins', secondary: 'Nunito', description: '圆润的字体组合，适合年轻化品牌网站', preview: '圆润、年轻' }
+                    ],
+                    app: [
+                        { primary: 'SF Pro Display', secondary: 'SF Pro Text', description: 'Apple系统字体，iOS风格界面的首选', preview: '系统、精致' },
+                        { primary: 'Roboto', secondary: 'Roboto', description: 'Android Material Design 推荐字体', preview: 'Material风格' },
+                        { primary: 'Inter', secondary: 'Inter', description: '专为UI界面设计的字体，不同字重搭配', preview: 'UI专用' },
+                        { primary: 'Source Sans Pro', secondary: 'Source Sans Pro', description: 'Adobe开源字体，适合专业应用界面', preview: '专业、开源' }
+                    ],
+                    brand: [
+                        { primary: 'Helvetica Neue', secondary: 'Arial', description: '经典的品牌设计组合，简洁专业', preview: '经典、专业' },
+                        { primary: 'Futura', secondary: 'Avenir', description: '几何无衬线字体，现代品牌的理想选择', preview: '几何、现代' },
+                        { primary: 'Proxima Nova', secondary: 'Source Sans Pro', description: '温和的几何字体，适合科技品牌', preview: '科技、温和' },
+                        { primary: 'Gotham', secondary: 'Freight Sans', description: '美式几何字体，适合力量型品牌', preview: '力量、美式' }
+                    ]
+                },
+                'serif': {
+                    website: [
+                        { primary: 'Playfair Display', secondary: 'Source Serif Pro', description: '优雅的标题衬线配上现代的正文衬线', preview: '优雅、现代' },
+                        { primary: 'Merriweather', secondary: 'Georgia', description: '为屏幕阅读优化的衬线字体组合', preview: '易读、传统' },
+                        { primary: 'Lora', secondary: 'Libre Baskerville', description: '书籍风格的字体组合，适合内容网站', preview: '书籍、内容' },
+                        { primary: 'Crimson Text', secondary: 'EB Garamond', description: '古典的书籍字体组合', preview: '古典、书籍' }
+                    ],
+                    print: [
+                        { primary: 'Times New Roman', secondary: 'Times New Roman', description: '印刷业的黄金标准，不同字重搭配', preview: '印刷标准' },
+                        { primary: 'Minion Pro', secondary: 'Myriad Pro', description: 'Adobe经典组合，衬线标题配无衬线正文', preview: 'Adobe经典' },
+                        { primary: 'Caslon', secondary: 'Gill Sans', description: '英国传统印刷字体组合', preview: '英式、传统' },
+                        { primary: 'Garamond', secondary: 'Futura', description: '古典与现代的完美结合', preview: '古典现代' }
+                    ],
+                    brand: [
+                        { primary: 'Didot', secondary: 'Avenir', description: '高对比度衬线配几何无衬线，奢华感强', preview: '奢华、对比' },
+                        { primary: 'Bodoni', secondary: 'Helvetica', description: '意大利经典衬线配瑞士无衬线', preview: '意式、经典' },
+                        { primary: 'Trajan', secondary: 'Optima', description: '罗马刻字风格，适合历史品牌', preview: '罗马、历史' },
+                        { primary: 'Sabon', secondary: 'Frutiger', description: '人文主义字体组合，温和专业', preview: '人文、温和' }
+                    ]
+                },
+                'display': {
+                    brand: [
+                        { primary: 'Bebas Neue', secondary: 'Open Sans', description: '粗体装饰字配简洁无衬线，冲击力强', preview: '冲击、粗体' },
+                        { primary: 'Oswald', secondary: 'Lato', description: '窄体装饰字配友好正文字体', preview: '窄体、友好' },
+                        { primary: 'Raleway', secondary: 'Source Sans Pro', description: '优雅装饰字配专业正文字体', preview: '优雅、专业' },
+                        { primary: 'Montserrat', secondary: 'Roboto Slab', description: '几何装饰字配现代衬线字体', preview: '几何、现代' }
+                    ],
+                    presentation: [
+                        { primary: 'League Spartan', secondary: 'Source Sans Pro', description: 'Art Deco风格标题配现代正文', preview: 'Art Deco' },
+                        { primary: 'Staatliches', secondary: 'Open Sans', description: '德式工业风格字体组合', preview: '工业、德式' },
+                        { primary: 'Archivo Black', secondary: 'Archivo', description: '同族字体的不同字重组合', preview: '同族、层次' },
+                        { primary: 'Anton', secondary: 'Roboto', description: '强烈装饰字配中性正文字体', preview: '强烈、中性' }
+                    ]
+                }
+            };
+
+            // 字体使用指南
+            const fontGuides = {
+                'sans-serif': '无衬线字体具有现代、简洁的特点，在数字屏幕上表现优秀。建议标题使用较重字重（600-700），正文使用常规字重（400），确保良好的可读性。适合科技、现代品牌使用。',
+                'serif': '衬线字体传统、优雅，适合长文本阅读。在印刷品中表现尤佳，数字媒体中建议选择为屏幕优化的衬线字体。适合文化、教育、奢侈品牌使用。',
+                'display': '装饰字体个性鲜明，应谨慎使用，通常只用于标题或Logo。避免用于长段文本，注意与正文字体的搭配协调。适合创意、时尚、娱乐品牌使用。'
+            };
+
+            // 生成字体组合
+            function generateFontCombinations() {
+                const scenario = fontScenario.value;
+                const fonts = fontDatabase[currentFontType][scenario] || fontDatabase[currentFontType].website || [];
+                
+                fontCombinations.innerHTML = fonts.map(font => `
+                    <div class="font-preview p-6 border border-gray-200 rounded-lg hover:shadow-md transition-all cursor-pointer" onclick="selectFontCombination('${font.primary}', '${font.secondary}')">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex-1">
+                                <div class="text-2xl font-bold mb-2" style="font-family: '${font.primary}', sans-serif;">${font.primary}</div>
+                                <div class="text-base text-gray-600" style="font-family: '${font.secondary}', sans-serif;">+ ${font.secondary}</div>
+                            </div>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">${font.preview}</span>
+                        </div>
+                        <div class="mb-4">
+                            <div class="text-lg font-semibold mb-2" style="font-family: '${font.primary}', sans-serif;">标题示例文本</div>
+                            <div class="text-sm text-gray-600" style="font-family: '${font.secondary}', sans-serif;">
+                                这是正文示例文本，展示字体在段落中的表现效果。好的字体组合能够创造清晰的视觉层次，提升用户的阅读体验。
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500">${font.description}</p>
+                        <div class="mt-3 flex justify-end">
+                            <button class="text-xs bg-blue-100 text-blue-600 px-3 py-1 rounded-full hover:bg-blue-200 transition-colors">
+                                <i class="fas fa-heart mr-1"></i>选择此组合
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+
+                // 更新使用指南
+                fontGuide.querySelector('p').textContent = fontGuides[currentFontType];
+            }
+
+            // 选择字体组合
+            window.selectFontCombination = function(primary, secondary) {
+                const message = `已选择字体组合：${primary} + ${secondary}`;
+                const tooltip = document.createElement('div');
+                tooltip.textContent = message;
+                tooltip.className = 'fixed top-20 right-4 bg-green-500 text-white px-4 py-2 rounded-md text-sm z-50 max-w-xs';
+                document.body.appendChild(tooltip);
+                setTimeout(() => document.body.removeChild(tooltip), 3000);
+
+                // 这里可以添加保存到本地存储的逻辑
+                localStorage.setItem('selectedFontCombination', JSON.stringify({
+                    primary: primary,
+                    secondary: secondary,
+                    timestamp: new Date().getTime()
+                }));
+            };
+
+            // 事件监听
+            fontTypeButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    fontTypeButtons.forEach(b => {
+                        b.classList.remove('active', 'border-green-500', 'bg-green-50', 'text-green-700');
+                        b.classList.add('border-gray-200', 'bg-gray-50', 'text-gray-700');
+                    });
+                    this.classList.add('active', 'border-green-500', 'bg-green-50', 'text-green-700');
+                    this.classList.remove('border-gray-200', 'bg-gray-50', 'text-gray-700');
+                    currentFontType = this.dataset.type;
+                    generateFontCombinations();
+                });
+            });
+
+            fontScenario.addEventListener('change', generateFontCombinations);
+            generateFontsButton.addEventListener('click', generateFontCombinations);
+
+            saveFontsButton.addEventListener('click', function() {
+                const saved = localStorage.getItem('selectedFontCombination');
+                if (saved) {
+                    const tooltip = document.createElement('div');
+                    tooltip.textContent = '字体组合已保存到收藏夹！';
+                    tooltip.className = 'fixed top-20 right-4 bg-blue-500 text-white px-4 py-2 rounded-md text-sm z-50';
+                    document.body.appendChild(tooltip);
+                    setTimeout(() => document.body.removeChild(tooltip), 2000);
+                } else {
+                    const tooltip = document.createElement('div');
+                    tooltip.textContent = '请先选择一个字体组合！';
+                    tooltip.className = 'fixed top-20 right-4 bg-orange-500 text-white px-4 py-2 rounded-md text-sm z-50';
+                    document.body.appendChild(tooltip);
+                    setTimeout(() => document.body.removeChild(tooltip), 2000);
+                }
+            });
+
+            // 初始化
+            generateFontCombinations();
+        });
+
+        // 尺寸计算器功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const baseWidthInput = document.getElementById('base-width');
+            const baseHeightInput = document.getElementById('base-height');
+            const deviceTypeSelect = document.getElementById('device-type');
+            const calculateButton = document.getElementById('calculate-size');
+            const sizeResults = document.getElementById('size-results');
+
+            // 设备尺寸数据
+            const deviceSizes = {
+                mobile: {
+                    'iPhone 14': { width: 390, height: 844 },
+                    'iPhone 14 Plus': { width: 428, height: 926 },
+                    'Android (1080p)': { width: 360, height: 800 },
+                    'Samsung Galaxy': { width: 412, height: 915 }
+                },
+                tablet: {
+                    'iPad': { width: 768, height: 1024 },
+                    'iPad Pro 11"': { width: 834, height: 1194 },
+                    'iPad Pro 12.9"': { width: 1024, height: 1366 },
+                    'Android 平板': { width: 800, height: 1280 }
+                },
+                desktop: {
+                    'MacBook Air': { width: 1440, height: 900 },
+                    'MacBook Pro': { width: 1680, height: 1050 },
+                    'Full HD': { width: 1920, height: 1080 },
+                    '2K': { width: 2560, height: 1440 }
+                }
+            };
+
+            calculateButton.addEventListener('click', function() {
+                const baseWidth = parseInt(baseWidthInput.value);
+                const baseHeight = parseInt(baseHeightInput.value);
+                const deviceType = deviceTypeSelect.value;
+
+                if (!baseWidth || !baseHeight) {
+                    alert('请输入基础尺寸！');
+                    return;
+                }
+
+                const devices = deviceSizes[deviceType];
+                const results = Object.entries(devices).map(([deviceName, size]) => {
+                    // 按比例缩放计算
+                    const scaleX = size.width / 1920; // 假设桌面端基准是1920px
+                    const scaleY = size.height / 1080; // 假设桌面端基准是1080px
+                    const scale = Math.min(scaleX, scaleY);
+
+                    const scaledWidth = Math.round(baseWidth * scale);
+                    const scaledHeight = Math.round(baseHeight * scale);
+
+                    return {
+                        device: deviceName,
+                        original: `${baseWidth}×${baseHeight}`,
+                        scaled: `${scaledWidth}×${scaledHeight}`,
+                        scale: Math.round(scale * 100),
+                        viewport: `${size.width}×${size.height}`
+                    };
+                });
+
+                sizeResults.innerHTML = results.map(result => `
+                    <div class="p-4 border border-gray-200 rounded-lg">
+                        <div class="flex justify-between items-center mb-2">
+                            <h6 class="font-medium text-gray-800">${result.device}</h6>
+                            <span class="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded-full">${result.scale}%</span>
+                        </div>
+                        <div class="space-y-1 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">视口尺寸</span>
+                                <span class="font-mono text-gray-800">${result.viewport}</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">原始尺寸</span>
+                                <span class="font-mono text-gray-800">${result.original}</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">适配尺寸</span>
+                                <span class="font-mono text-green-600 font-medium">${result.scaled}</span>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            });
+        });
+
+        // 颜色格式转换器功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const convertColorPicker = document.getElementById('convert-color-picker');
+            const convertColorInput = document.getElementById('convert-color-input');
+            const convertButton = document.getElementById('convert-color');
+            const colorFormats = document.getElementById('color-formats');
+
+            function convertColor(color) {
+                try {
+                    let hex = color;
+                    
+                    // 确保是有效的hex格式
+                    if (!hex.startsWith('#')) {
+                        hex = '#' + hex;
+                    }
+                    
+                    if (!/^#[0-9A-F]{6}$/i.test(hex)) {
+                        throw new Error('无效的颜色格式');
+                    }
+
+                    // 转换为RGB
+                    const r = parseInt(hex.slice(1, 3), 16);
+                    const g = parseInt(hex.slice(3, 5), 16);
+                    const b = parseInt(hex.slice(5, 7), 16);
+
+                    // 转换为HSL
+                    const rNorm = r / 255;
+                    const gNorm = g / 255;
+                    const bNorm = b / 255;
+                    const max = Math.max(rNorm, gNorm, bNorm);
+                    const min = Math.min(rNorm, gNorm, bNorm);
+                    let h, s, l = (max + min) / 2;
+
+                    if (max === min) {
+                        h = s = 0;
+                    } else {
+                        const d = max - min;
+                        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+                        switch (max) {
+                            case rNorm: h = (gNorm - bNorm) / d + (gNorm < bNorm ? 6 : 0); break;
+                            case gNorm: h = (bNorm - rNorm) / d + 2; break;
+                            case bNorm: h = (rNorm - gNorm) / d + 4; break;
+                        }
+                        h /= 6;
+                    }
+
+                    const hDeg = Math.round(h * 360);
+                    const sPercent = Math.round(s * 100);
+                    const lPercent = Math.round(l * 100);
+
+                    // 转换为HSV
+                    const v = max;
+                    const sHsv = max === 0 ? 0 : (max - min) / max;
+                    const vPercent = Math.round(v * 100);
+                    const sHsvPercent = Math.round(sHsv * 100);
+
+                    return {
+                        hex: hex.toUpperCase(),
+                        rgb: `rgb(${r}, ${g}, ${b})`,
+                        rgba: `rgba(${r}, ${g}, ${b}, 1)`,
+                        hsl: `hsl(${hDeg}, ${sPercent}%, ${lPercent}%)`,
+                        hsla: `hsla(${hDeg}, ${sPercent}%, ${lPercent}%, 1)`,
+                        hsv: `hsv(${hDeg}, ${sHsvPercent}%, ${vPercent}%)`,
+                        cmyk: calculateCMYK(r, g, b)
+                    };
+                } catch (error) {
+                    return null;
+                }
+            }
+
+            function calculateCMYK(r, g, b) {
+                const rNorm = r / 255;
+                const gNorm = g / 255;
+                const bNorm = b / 255;
+                
+                const k = 1 - Math.max(rNorm, gNorm, bNorm);
+                const c = k === 1 ? 0 : (1 - rNorm - k) / (1 - k);
+                const m = k === 1 ? 0 : (1 - gNorm - k) / (1 - k);
+                const y = k === 1 ? 0 : (1 - bNorm - k) / (1 - k);
+                
+                return `cmyk(${Math.round(c * 100)}%, ${Math.round(m * 100)}%, ${Math.round(y * 100)}%, ${Math.round(k * 100)}%)`;
+            }
+
+            function updateConversion() {
+                const color = convertColorInput.value;
+                const result = convertColor(color);
+                
+                if (result) {
+                    convertColorPicker.value = result.hex.toLowerCase();
+                    
+                    colorFormats.innerHTML = Object.entries(result).map(([format, value]) => `
+                        <div class="flex items-center justify-between p-3 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                            <div>
+                                <div class="font-medium text-gray-800 uppercase text-xs">${format}</div>
+                                <div class="font-mono text-sm text-gray-600">${value}</div>
+                            </div>
+                            <button onclick="copyToClipboard('${value}')" class="p-2 text-gray-400 hover:text-gray-600 transition-colors">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    `).join('');
+                } else {
+                    colorFormats.innerHTML = '<div class="text-center text-red-500 py-4">无效的颜色格式，请输入有效的HEX值</div>';
+                }
+            }
+
+            convertColorPicker.addEventListener('input', function() {
+                convertColorInput.value = this.value;
+                updateConversion();
+            });
+
+            convertColorInput.addEventListener('input', updateConversion);
+            convertButton.addEventListener('click', updateConversion);
+
+            // 初始化
+            updateConversion();
+        });
+
+        // 移动端菜单
+        document.getElementById('mobile-menu-button')?.addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu) {
+                mobileMenu.classList.toggle('hidden');
+            }
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

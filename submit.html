@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <script defer data-domain="designnav.art" src="https://plausible.io/js/script.file-downloads.outbound-links.pageview-props.revenue.tagged-events.js"></script>
+    <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7420523608637446"
+     crossorigin="anonymous"></script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G7ETHDVRRK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G7ETHDVRRK');
+    </script>
+    
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "sy76cv1kes");
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>提交资源 - DesignNav</title>
+    <meta name="description" content="向DesignNav提交优质的设计资源、工具、教程等，与设计师社区分享有价值的内容">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            scroll-behavior: smooth;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .form-card {
+            transition: all 0.3s ease;
+        }
+        .form-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .input-focus {
+            transition: all 0.2s ease;
+        }
+        .input-focus:focus {
+            transform: scale(1.02);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        .success-message {
+            animation: slideInUp 0.5s ease;
+        }
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .category-badge {
+            transition: all 0.2s ease;
+        }
+        .category-badge:hover {
+            transform: scale(1.05);
+        }
+        .category-badge.selected {
+            background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="bg-white shadow-sm fixed w-full z-10">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <a href="index.html" class="text-xl font-bold text-blue-600">DesignNav</a>
+                <span class="text-sm text-gray-500">资源提交</span>
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600">首页</a>
+                <a href="tools.html" class="text-gray-700 hover:text-blue-600">设计工具</a>
+                <span class="text-blue-600 font-medium">提交资源</span>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="index.html" class="bg-gray-100 text-gray-700 px-4 py-1.5 rounded-md text-sm hover:bg-gray-200">返回首页</a>
+                <button class="text-gray-700 md:hidden" id="mobile-menu-button"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容区 -->
+    <main class="container mx-auto px-4 pt-20 pb-12">
+        <!-- 页面标题 -->
+        <div class="text-center py-12">
+            <h1 class="text-4xl font-bold mb-4">提交设计资源</h1>
+            <p class="text-gray-600 max-w-2xl mx-auto">分享优质的设计资源、工具、教程等内容，帮助更多设计师发现有价值的资源。经过审核后，优质资源将被收录到DesignNav中。</p>
+        </div>
+
+        <!-- 提交统计 -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div class="bg-white rounded-xl shadow-md p-6 text-center">
+                <div class="text-3xl font-bold text-blue-600 mb-2">1,245</div>
+                <div class="text-gray-600 text-sm">已收录资源</div>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-6 text-center">
+                <div class="text-3xl font-bold text-green-600 mb-2">89</div>
+                <div class="text-gray-600 text-sm">待审核资源</div>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-6 text-center">
+                <div class="text-3xl font-bold text-purple-600 mb-2">156</div>
+                <div class="text-gray-600 text-sm">活跃贡献者</div>
+            </div>
+        </div>
+
+        <!-- 提交表单 -->
+        <div class="form-card bg-white rounded-2xl shadow-lg p-8 mb-8">
+            <div class="flex items-center mb-8">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center mr-4">
+                    <i class="fas fa-plus text-white text-xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-semibold text-gray-800">提交新资源</h2>
+                    <p class="text-gray-600 text-sm">请填写完整的资源信息，我们会在24小时内审核</p>
+                </div>
+            </div>
+
+            <form id="submit-form" class="space-y-8">
+                <!-- 基础信息 -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- 左侧基础信息 -->
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">资源名称 *</label>
+                            <input type="text" id="resource-name" required class="input-focus w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="请输入资源名称，如：Figma、Unsplash等">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">资源链接 *</label>
+                            <input type="url" id="resource-url" required class="input-focus w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="https://example.com">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">简短描述 *</label>
+                            <textarea id="resource-description" required rows="4" class="input-focus w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none" placeholder="请用1-2句话简要描述这个资源的特点和用途..."></textarea>
+                            <div class="text-xs text-gray-500 mt-1">建议50-150字，简明扼要地介绍资源特点</div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">推荐理由</label>
+                            <textarea id="resource-reason" rows="3" class="input-focus w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none" placeholder="为什么推荐这个资源？有什么独特之处？"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- 右侧分类和标签 -->
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-3">资源分类 *</label>
+                            <div class="grid grid-cols-2 gap-3">
+                                <button type="button" class="category-badge text-left px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-blue-500 transition-all" data-category="design-platform">
+                                    <div class="font-medium">设计平台</div>
+                                    <div class="text-xs text-gray-500">Dribbble、Behance等</div>
+                                </button>
+                                <button type="button" class="category-badge text-left px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-blue-500 transition-all" data-category="design-tool">
+                                    <div class="font-medium">设计工具</div>
+                                    <div class="text-xs text-gray-500">Figma、Sketch等</div>
+                                </button>
+                                <button type="button" class="category-badge text-left px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-blue-500 transition-all" data-category="material">
+                                    <div class="font-medium">素材资源</div>
+                                    <div class="text-xs text-gray-500">图片、字体、图标等</div>
+                                </button>
+                                <button type="button" class="category-badge text-left px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-blue-500 transition-all" data-category="tutorial">
+                                    <div class="font-medium">教程学习</div>
+                                    <div class="text-xs text-gray-500">教程、课程、博客等</div>
+                                </button>
+                                <button type="button" class="category-badge text-left px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-blue-500 transition-all" data-category="inspiration">
+                                    <div class="font-medium">灵感创意</div>
+                                    <div class="text-xs text-gray-500">作品展示、案例等</div>
+                                </button>
+                                <button type="button" class="category-badge text-left px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-blue-500 transition-all" data-category="ai-tool">
+                                    <div class="font-medium">AI工具</div>
+                                    <div class="text-xs text-gray-500">AIGC、智能设计等</div>
+                                </button>
+                            </div>
+                            <input type="hidden" id="selected-category" required>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">标签</label>
+                            <input type="text" id="resource-tags" class="input-focus w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="用逗号分隔，如：免费,UI设计,图标">
+                            <div class="text-xs text-gray-500 mt-1">添加相关标签有助于其他用户发现这个资源</div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">语言</label>
+                            <select id="resource-language" class="input-focus w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="zh">中文</option>
+                                <option value="en">英文</option>
+                                <option value="multiple">多语言</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">费用类型</label>
+                            <select id="resource-pricing" class="input-focus w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="free">完全免费</option>
+                                <option value="freemium">免费+付费版本</option>
+                                <option value="paid">付费</option>
+                                <option value="unknown">不确定</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 提交者信息 -->
+                <div class="border-t border-gray-200 pt-8">
+                    <h3 class="text-lg font-medium text-gray-800 mb-6">提交者信息（可选）</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">你的名字或昵称</label>
+                            <input type="text" id="submitter-name" class="input-focus w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="用于致谢，可留空">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">联系邮箱</label>
+                            <input type="email" id="submitter-email" class="input-focus w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="用于审核反馈，可留空">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 提交按钮 -->
+                <div class="flex items-center justify-between pt-6 border-t border-gray-200">
+                    <div class="text-sm text-gray-600">
+                        <i class="fas fa-info-circle text-blue-500 mr-1"></i>
+                        提交后我们会在24小时内审核，审核通过后会显示在相应分类中
+                    </div>
+                    <div class="flex space-x-4">
+                        <button type="button" id="reset-form" class="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
+                            重置表单
+                        </button>
+                        <button type="submit" id="submit-button" class="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 font-medium">
+                            <span id="button-text">提交资源</span>
+                            <i class="fas fa-spinner fa-spin ml-2 hidden" id="button-spinner"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- 提交指南 -->
+        <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-8">
+            <h3 class="text-xl font-semibold text-gray-800 mb-6">提交指南</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="flex items-start space-x-3">
+                    <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-1">
+                        <i class="fas fa-check text-green-600 text-sm"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-800 mb-1">优质资源</h4>
+                        <p class="text-gray-600 text-sm">确保提交的资源对设计师有实际价值，界面友好，功能稳定</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 mt-1">
+                        <i class="fas fa-shield-alt text-blue-600 text-sm"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-800 mb-1">安全可靠</h4>
+                        <p class="text-gray-600 text-sm">提交的网站应该安全可靠，避免包含恶意软件或欺诈内容</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0 mt-1">
+                        <i class="fas fa-info-circle text-purple-600 text-sm"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-800 mb-1">详细描述</h4>
+                        <p class="text-gray-600 text-sm">提供准确的描述和合适的分类，帮助其他用户快速了解资源</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <div class="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center flex-shrink-0 mt-1">
+                        <i class="fas fa-clock text-orange-600 text-sm"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-800 mb-1">及时更新</h4>
+                        <p class="text-gray-600 text-sm">如果发现资源链接失效或信息有误，欢迎联系我们更新</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <div class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0 mt-1">
+                        <i class="fas fa-ban text-red-600 text-sm"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-800 mb-1">避免重复</h4>
+                        <p class="text-gray-600 text-sm">提交前请检查是否已存在相同的资源，避免重复提交</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0 mt-1">
+                        <i class="fas fa-heart text-indigo-600 text-sm"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-800 mb-1">社区贡献</h4>
+                        <p class="text-gray-600 text-sm">感谢你为设计师社区贡献优质资源，让更多人受益</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-6">
+                <a href="index.html" class="text-2xl font-bold text-blue-400 hover:text-blue-300">DesignNav</a>
+                <p class="text-gray-400 mt-2">感谢你为设计师社区贡献优质资源</p>
+            </div>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="index.html" class="text-gray-400 hover:text-white">返回首页</a>
+                <a href="tools.html" class="text-gray-400 hover:text-white">设计工具</a>
+                <a href="#" class="text-gray-400 hover:text-white">意见反馈</a>
+            </div>
+            <div class="text-gray-400 text-sm">
+                <p>© 2023 DesignNav. 保留所有权利</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 成功提示模态框 -->
+    <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-xl p-8 max-w-md mx-4 text-center success-message">
+            <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-check text-green-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">提交成功！</h3>
+            <p class="text-gray-600 mb-6">感谢你的贡献！我们会在24小时内审核你提交的资源，审核通过后会显示在相应分类中。</p>
+            <button id="close-modal" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                知道了
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('submit-form');
+            const categoryButtons = document.querySelectorAll('.category-badge');
+            const selectedCategoryInput = document.getElementById('selected-category');
+            const submitButton = document.getElementById('submit-button');
+            const buttonText = document.getElementById('button-text');
+            const buttonSpinner = document.getElementById('button-spinner');
+            const resetButton = document.getElementById('reset-form');
+            const successModal = document.getElementById('success-modal');
+            const closeModal = document.getElementById('close-modal');
+
+            // 分类选择
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // 移除其他选中状态
+                    categoryButtons.forEach(btn => btn.classList.remove('selected'));
+                    // 添加选中状态
+                    this.classList.add('selected');
+                    // 设置隐藏input的值
+                    selectedCategoryInput.value = this.dataset.category;
+                });
+            });
+
+            // 表单提交
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // 验证必填字段
+                const requiredFields = [
+                    { id: 'resource-name', name: '资源名称' },
+                    { id: 'resource-url', name: '资源链接' },
+                    { id: 'resource-description', name: '简短描述' },
+                    { id: 'selected-category', name: '资源分类' }
+                ];
+
+                let isValid = true;
+                let errorMessage = '';
+
+                requiredFields.forEach(field => {
+                    const element = document.getElementById(field.id);
+                    if (!element.value.trim()) {
+                        isValid = false;
+                        errorMessage = `请填写${field.name}`;
+                        element.focus();
+                        return;
+                    }
+                });
+
+                // 验证URL格式
+                const urlField = document.getElementById('resource-url');
+                try {
+                    new URL(urlField.value);
+                } catch {
+                    isValid = false;
+                    errorMessage = '请输入有效的URL地址';
+                    urlField.focus();
+                }
+
+                if (!isValid) {
+                    alert(errorMessage);
+                    return;
+                }
+
+                // 显示加载状态
+                submitButton.disabled = true;
+                buttonText.textContent = '提交中...';
+                buttonSpinner.classList.remove('hidden');
+
+                // 收集表单数据
+                const formData = {
+                    name: document.getElementById('resource-name').value,
+                    url: document.getElementById('resource-url').value,
+                    description: document.getElementById('resource-description').value,
+                    reason: document.getElementById('resource-reason').value,
+                    category: selectedCategoryInput.value,
+                    tags: document.getElementById('resource-tags').value,
+                    language: document.getElementById('resource-language').value,
+                    pricing: document.getElementById('resource-pricing').value,
+                    submitterName: document.getElementById('submitter-name').value,
+                    submitterEmail: document.getElementById('submitter-email').value,
+                    submitTime: new Date().toISOString()
+                };
+
+                // 模拟提交过程
+                setTimeout(() => {
+                    // 保存到本地存储（实际项目中应该发送到服务器）
+                    const submissions = JSON.parse(localStorage.getItem('resourceSubmissions') || '[]');
+                    submissions.push({
+                        id: Date.now(),
+                        ...formData,
+                        status: 'pending'
+                    });
+                    localStorage.setItem('resourceSubmissions', JSON.stringify(submissions));
+
+                    // 恢复按钮状态
+                    submitButton.disabled = false;
+                    buttonText.textContent = '提交资源';
+                    buttonSpinner.classList.add('hidden');
+
+                    // 显示成功模态框
+                    successModal.classList.remove('hidden');
+
+                    // 重置表单
+                    form.reset();
+                    categoryButtons.forEach(btn => btn.classList.remove('selected'));
+                    selectedCategoryInput.value = '';
+
+                }, 2000);
+            });
+
+            // 重置表单
+            resetButton.addEventListener('click', function() {
+                if (confirm('确定要重置表单吗？所有填写的内容将被清空。')) {
+                    form.reset();
+                    categoryButtons.forEach(btn => btn.classList.remove('selected'));
+                    selectedCategoryInput.value = '';
+                }
+            });
+
+            // 关闭成功模态框
+            closeModal.addEventListener('click', function() {
+                successModal.classList.add('hidden');
+            });
+
+            // 点击模态框背景关闭
+            successModal.addEventListener('click', function(e) {
+                if (e.target === successModal) {
+                    successModal.classList.add('hidden');
+                }
+            });
+
+            // 移动端菜单
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', function() {
+                    // 简单的移动端菜单处理
+                    alert('移动端菜单功能');
+                });
+            }
+
+            // 表单字段输入效果
+            const inputs = document.querySelectorAll('.input-focus');
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.parentElement.classList.add('input-focused');
+                });
+                input.addEventListener('blur', function() {
+                    this.parentElement.classList.remove('input-focused');
+                });
+            });
+
+            // URL验证实时反馈
+            const urlInput = document.getElementById('resource-url');
+            urlInput.addEventListener('input', function() {
+                const value = this.value;
+                if (value) {
+                    try {
+                        new URL(value);
+                        this.style.borderColor = '#10B981';
+                    } catch {
+                        this.style.borderColor = '#EF4444';
+                    }
+                } else {
+                    this.style.borderColor = '#D1D5DB';
+                }
+            });
+
+            // 描述字数统计
+            const descriptionInput = document.getElementById('resource-description');
+            const descriptionHelper = descriptionInput.nextElementSibling;
+            descriptionInput.addEventListener('input', function() {
+                const length = this.value.length;
+                const color = length < 50 ? '#EF4444' : length > 150 ? '#F59E0B' : '#10B981';
+                descriptionHelper.style.color = color;
+                descriptionHelper.textContent = `${length}/150字，建议50-150字，简明扼要地介绍资源特点`;
+            });
+        });
+    </script>
+</body>
+</html>

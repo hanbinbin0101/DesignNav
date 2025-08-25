@@ -53,28 +53,38 @@
                 <span class="text-sm text-gray-500">设计师的导航宝库</span>
             </div>
             <nav class="hidden md:flex space-x-6">
-                <a href="#top" class="text-gray-700 hover:text-blue-600">首页</a>
+                <a href="#top" class="text-blue-600 font-medium hover:text-blue-700">首页</a>
+                <a href="tools.html" class="text-gray-700 hover:text-blue-600">设计工具</a>
                 <a href="#design-resources" class="text-gray-700 hover:text-blue-600">设计资源</a>
+                <a href="#tutorials" class="text-gray-700 hover:text-blue-600">教程指南</a>
+                <a href="#tool-reviews" class="text-gray-700 hover:text-blue-600">工具评测</a>
                 <a href="#inspiration" class="text-gray-700 hover:text-blue-600">灵感创意</a>
                 <a href="#materials" class="text-gray-700 hover:text-blue-600">素材库</a>
                 <a href="#community" class="text-gray-700 hover:text-blue-600">社群学习</a>
-                <a href="#tools" class="text-gray-700 hover:text-blue-600">工具箱</a>
                 <a href="#news" class="text-gray-700 hover:text-blue-600">资讯</a>
             </nav>
             <div class="flex items-center space-x-4">
-                <button class="bg-blue-600 text-white px-4 py-1.5 rounded-md text-sm hover:bg-blue-700">提交资源</button>
+                <a href="submit.html" class="bg-blue-600 text-white px-4 py-1.5 rounded-md text-sm hover:bg-blue-700 transition-colors flex items-center">
+                    <i class="fas fa-plus mr-1"></i>提交资源
+                </a>
                 <button class="text-gray-700 md:hidden" id="mobile-menu-button"><i class="fas fa-bars"></i></button>
             </div>
         </div>
         <!-- 移动端菜单 -->
         <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200 py-2">
             <div class="container mx-auto px-4 flex flex-col space-y-2">
-                <a href="#top" class="text-gray-700 hover:text-blue-600 py-2">首页</a>
+                <a href="#top" class="text-blue-600 font-medium hover:text-blue-700 py-2">首页</a>
+                <a href="tools.html" class="text-gray-700 hover:text-blue-600 py-2">设计工具</a>
+                <a href="submit.html" class="text-gray-700 hover:text-blue-600 py-2 flex items-center">
+                    <i class="fas fa-plus mr-2"></i>提交资源
+                </a>
+                <div class="border-t border-gray-100 my-2"></div>
                 <a href="#design-resources" class="text-gray-700 hover:text-blue-600 py-2">设计资源</a>
+                <a href="#tutorials" class="text-gray-700 hover:text-blue-600 py-2">教程指南</a>
+                <a href="#tool-reviews" class="text-gray-700 hover:text-blue-600 py-2">工具评测</a>
                 <a href="#inspiration" class="text-gray-700 hover:text-blue-600 py-2">灵感创意</a>
                 <a href="#materials" class="text-gray-700 hover:text-blue-600 py-2">素材库</a>
                 <a href="#community" class="text-gray-700 hover:text-blue-600 py-2">社群学习</a>
-                <a href="#tools" class="text-gray-700 hover:text-blue-600 py-2">工具箱</a>
                 <a href="#news" class="text-gray-700 hover:text-blue-600 py-2">资讯</a>
             </div>
         </div>
@@ -85,7 +95,26 @@
         <!-- 标题区域 -->
         <div class="text-center py-12">
             <h1 class="text-4xl font-bold mb-4">设计师必备导航资源</h1>
-            <p class="text-gray-600 max-w-2xl mx-auto">发现3000+优质设计资源、灵感与工具，提升你的设计效率与创意</p>
+            <p class="text-gray-600 max-w-2xl mx-auto">发现3000+优质设计资源、灵感与工具，提升你的设计效率与创意。获取专业设计指导、工具评测和实用教程，助你成为更优秀的设计师。</p>
+            
+            <!-- 网站价值介绍 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 max-w-4xl mx-auto">
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <i class="fas fa-graduation-cap text-blue-600 text-2xl mb-3"></i>
+                    <h3 class="font-semibold text-gray-800 mb-2">专业教程指导</h3>
+                    <p class="text-gray-600 text-sm">提供深度的设计教程，从基础到进阶，帮助设计师系统提升技能</p>
+                </div>
+                <div class="bg-green-50 p-6 rounded-lg">
+                    <i class="fas fa-search text-green-600 text-2xl mb-3"></i>
+                    <h3 class="font-semibold text-gray-800 mb-2">工具深度评测</h3>
+                    <p class="text-gray-600 text-sm">详细评测各类设计工具，对比优缺点，帮你选择最适合的工具</p>
+                </div>
+                <div class="bg-purple-50 p-6 rounded-lg">
+                    <i class="fas fa-lightbulb text-purple-600 text-2xl mb-3"></i>
+                    <h3 class="font-semibold text-gray-800 mb-2">创意灵感启发</h3>
+                    <p class="text-gray-600 text-sm">分析优秀设计案例，分享创意思路，激发你的设计灵感</p>
+                </div>
+            </div>
         </div>
 
         <!-- 搜索框 -->
@@ -970,6 +999,83 @@
             </div>
         </section>
 
+        <!-- 设计教程与指南 -->
+        <section class="mb-16" id="tutorials">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl font-bold">设计教程与指南</h2>
+                <a href="#" class="text-blue-600 hover:underline">查看全部</a>
+            </div>
+            
+            <!-- 教程分类 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- 基础教程 -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-play text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">设计基础教程</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h4 class="font-medium text-gray-800">色彩理论与搭配</h4>
+                            <p class="text-gray-600 text-sm">掌握色彩的基本原理，学会专业的色彩搭配技巧，打造和谐的视觉效果。包括色相、饱和度、明度的运用，以及经典配色方案的实际应用。</p>
+                            <span class="inline-block mt-2 text-xs bg-blue-100 text-blue-700 rounded-full px-2 py-1">免费教程</span>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-medium text-gray-800">排版设计原则</h4>
+                            <p class="text-gray-600 text-sm">学习字体选择、行距、字距的设置技巧，掌握网格系统和视觉层次的构建方法，提升版面的可读性和美观性。</p>
+                            <span class="inline-block mt-2 text-xs bg-green-100 text-green-700 rounded-full px-2 py-1">实用指南</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 工具教程 -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-tools text-purple-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">工具使用指南</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="border-l-4 border-purple-500 pl-4">
+                            <h4 class="font-medium text-gray-800">Figma 完全指南</h4>
+                            <p class="text-gray-600 text-sm">从界面介绍到高级功能，包括组件制作、原型设计、团队协作等实用技巧。适合初学者和进阶用户。</p>
+                            <span class="inline-block mt-2 text-xs bg-purple-100 text-purple-700 rounded-full px-2 py-1">深度教程</span>
+                        </div>
+                        <div class="border-l-4 border-indigo-500 pl-4">
+                            <h4 class="font-medium text-gray-800">Adobe系列技巧</h4>
+                            <p class="text-gray-600 text-sm">Photoshop、Illustrator、XD等工具的实用技巧和快捷键，提高工作效率的专业方法。</p>
+                            <span class="inline-block mt-2 text-xs bg-indigo-100 text-indigo-700 rounded-full px-2 py-1">效率提升</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 案例分析 -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-orange-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-chart-line text-orange-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">设计案例分析</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="border-l-4 border-orange-500 pl-4">
+                            <h4 class="font-medium text-gray-800">优秀UI设计解析</h4>
+                            <p class="text-gray-600 text-sm">分析知名应用和网站的界面设计，从用户体验角度解读设计决策，学习成功案例的设计思路。</p>
+                            <span class="inline-block mt-2 text-xs bg-orange-100 text-orange-700 rounded-full px-2 py-1">案例学习</span>
+                        </div>
+                        <div class="border-l-4 border-red-500 pl-4">
+                            <h4 class="font-medium text-gray-800">品牌视觉分析</h4>
+                            <p class="text-gray-600 text-sm">解构知名品牌的视觉识别系统，分析logo设计、色彩运用、字体选择等品牌设计要素。</p>
+                            <span class="inline-block mt-2 text-xs bg-red-100 text-red-700 rounded-full px-2 py-1">品牌研究</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- 教育类资源 -->
         <section class="mb-16" id="education">
             <div class="flex items-center justify-between mb-6">
@@ -997,11 +1103,247 @@
             </div>
         </section>
 
+        <!-- 工具深度评测 -->
+        <section class="mb-16" id="tool-reviews">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl font-bold">工具深度评测</h2>
+                <a href="#" class="text-blue-600 hover:underline">查看全部</a>
+            </div>
+            
+            <!-- 工具对比表 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-12">
+                <div class="p-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+                    <h3 class="text-xl font-semibold mb-2">主流设计工具对比分析</h3>
+                    <p class="text-blue-100">深度对比Figma、Sketch、Adobe XD等主流工具的功能、性能和价格</p>
+                </div>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">工具名称</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">价格</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">平台支持</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">协作功能</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">学习曲线</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">推荐度</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="w-8 h-8 rounded bg-purple-100 flex items-center justify-center mr-3">
+                                            <i class="fab fa-figma text-purple-600"></i>
+                                        </div>
+                                        <span class="font-medium text-gray-900">Figma</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">免费 / $12/月</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">全平台</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">优秀</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">中等</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex">
+                                        <span class="text-yellow-400">★★★★★</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="w-8 h-8 rounded bg-orange-100 flex items-center justify-center mr-3">
+                                            <i class="fas fa-diamond text-orange-600"></i>
+                                        </div>
+                                        <span class="font-medium text-gray-900">Sketch</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$99/年</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">仅macOS</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">良好</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">简单</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex">
+                                        <span class="text-yellow-400">★★★★☆</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="w-8 h-8 rounded bg-pink-100 flex items-center justify-center mr-3">
+                                            <i class="fab fa-adobe text-pink-600"></i>
+                                        </div>
+                                        <span class="font-medium text-gray-900">Adobe XD</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">免费 / $20.99/月</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">全平台</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">良好</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">中等</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex">
+                                        <span class="text-yellow-400">★★★★☆</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="p-6 bg-gray-50">
+                    <h4 class="font-semibold text-gray-800 mb-3">专业评测结论</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                        <div class="bg-white p-4 rounded-lg">
+                            <h5 class="font-medium text-purple-700 mb-2">推荐：初学者选择</h5>
+                            <p class="text-gray-600">Figma - 免费版功能强大，学习资源丰富，云端协作便利</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <h5 class="font-medium text-orange-700 mb-2">推荐：Mac用户</h5>
+                            <p class="text-gray-600">Sketch - 界面简洁，性能优秀，插件生态完善</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <h5 class="font-medium text-pink-700 mb-2">推荐：Adobe用户</h5>
+                            <p class="text-gray-600">Adobe XD - 与Creative Cloud无缝集成，适合已有Adobe订阅的用户</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- 工具类资源 -->
         <section class="mb-16">
             <div class="flex items-center justify-between mb-6">
                 <h2 class="text-2xl font-bold">工具类资源</h2>
                 <a href="#" class="text-blue-600 hover:underline">查看全部</a>
+            </div>
+            
+            <!-- 实用设计工具预览 -->
+            <div class="mb-12">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-xl font-semibold flex items-center">
+                        <span class="w-1 h-6 bg-blue-600 rounded mr-3"></span>
+                        实用设计工具与计算器
+                    </h3>
+                    <a href="tools.html" class="text-blue-600 hover:text-blue-700 font-medium text-sm flex items-center">
+                        进入工具页面 <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- 配色生成器预览 -->
+                    <a href="tools.html#color-tools" class="resource-card bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 p-6 hover:shadow-xl group">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-pink-400 to-purple-500 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-palette text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-800">智能配色生成器</h4>
+                                <span class="text-xs bg-pink-100 text-pink-700 rounded-full px-2 py-1">热门工具</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">基于色彩理论自动生成和谐配色方案，支持类比色、对比色等多种配色模式</p>
+                        <div class="flex -space-x-2">
+                            <div class="w-6 h-6 rounded-full bg-blue-500 border-2 border-white"></div>
+                            <div class="w-6 h-6 rounded-full bg-purple-500 border-2 border-white"></div>
+                            <div class="w-6 h-6 rounded-full bg-pink-500 border-2 border-white"></div>
+                            <div class="w-6 h-6 rounded-full bg-green-500 border-2 border-white"></div>
+                        </div>
+                    </a>
+
+                    <!-- 字体配对工具预览 -->
+                    <a href="tools.html#font-tools" class="resource-card bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 p-6 hover:shadow-xl group">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-font text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-800">字体配对推荐</h4>
+                                <span class="text-xs bg-green-100 text-green-700 rounded-full px-2 py-1">专业推荐</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">智能推荐完美的字体组合，适用于网站、应用、品牌等不同设计场景</p>
+                        <div class="text-sm">
+                            <div class="font-semibold mb-1" style="font-family: 'Inter', sans-serif;">Inter + Georgia</div>
+                            <div class="font-medium" style="font-family: 'Montserrat', sans-serif;">Montserrat + Lato</div>
+                        </div>
+                    </a>
+
+                    <!-- 尺寸计算器预览 -->
+                    <a href="tools.html#size-tools" class="resource-card bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 p-6 hover:shadow-xl group">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-ruler-combined text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-800">响应式尺寸计算</h4>
+                                <span class="text-xs bg-orange-100 text-orange-700 rounded-full px-2 py-1">效率工具</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">快速计算不同设备的适配尺寸，包含常用设备尺寸参考</p>
+                        <div class="text-xs text-gray-500 space-y-1">
+                            <div class="flex justify-between"><span>iPhone 14</span><span>390×844</span></div>
+                            <div class="flex justify-between"><span>iPad Pro</span><span>1024×1366</span></div>
+                        </div>
+                    </a>
+
+                    <!-- 格式转换器预览 -->
+                    <a href="tools.html#convert-tools" class="resource-card bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 p-6 hover:shadow-xl group">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-400 to-indigo-500 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-exchange-alt text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-800">格式转换工具</h4>
+                                <span class="text-xs bg-purple-100 text-purple-700 rounded-full px-2 py-1">多格式支持</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">在HEX、RGB、HSL、CMYK等颜色格式间快速转换</p>
+                        <div class="text-xs font-mono text-gray-500 space-y-1">
+                            <div>HEX: #3B82F6</div>
+                            <div>RGB: rgb(59, 130, 246)</div>
+                            <div>HSL: hsl(217, 91%, 60%)</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- 工具特色说明 -->
+                <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 mt-8">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-2">为什么选择我们的设计工具？</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-600">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span>完全免费使用，无需注册</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-mobile-alt text-blue-500 mr-2"></i>
+                                    <span>支持移动设备，随时随地使用</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-download text-purple-500 mr-2"></i>
+                                    <span>支持结果导出和分享</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="tools.html" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                            开始使用工具
+                        </a>
+                    </div>
+                </div>
             </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -1290,6 +1632,7 @@
                 }
             });
         });
+        
     </script>
 </body>
 </html> 
